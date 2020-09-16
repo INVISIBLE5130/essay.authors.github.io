@@ -16,6 +16,7 @@ body {
 }
 
 .authors_header {
+    z-index: 2;
     height: 200px;
     width: inherit;
     position: fixed;
@@ -283,7 +284,7 @@ body {
     width: 30%;
     height: inherit;
     display: inherit;
-    padding-left: 5%;
+    padding-left: 2%;
 }
 
 .authors_main-left_line {
@@ -311,18 +312,18 @@ body {
 .authors_main-left_title {
     color: #333333;
     font-size: 40px;
+    margin: 20% 0 0;
     line-height: 90%;
     font-weight: 900;
     font-style: normal;
     text-transform: uppercase;
     font-family: Raleway, sans-serif;
-    margin: 20% 0 0 5%;
 }
 
 .authors_main-right {
     width: 70%;
     height: inherit;
-    padding-top: 7vh;
+    padding: 7vh 0;
     display: inherit;
     flex-direction: column;
     align-items: flex-start;
@@ -695,7 +696,7 @@ body {
     }
 
     .authors_main-left_line {
-        height: 13vh;
+        height: 20vh;
     }
 
     .authors_main-left_line-block {

@@ -24,3 +24,9 @@ document.querySelectorAll('.authors_header-login').forEach(item => {
         document.querySelector('.authors_login').classList.toggle('hide')
     })
 })
+
+document.querySelectorAll('.lena').forEach(item => {
+    item.addEventListener('click', () => {
+        window.location.assign('authorsPages/lenasPage/lenasPage.html')
+    })
+})

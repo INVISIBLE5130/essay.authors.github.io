@@ -1,0 +1,149 @@
+.essays_main-right {
+    margin: 5% 0 0 5%;
+    flex-direction: column;
+}
+
+.essays_main-right_author {
+    display: flex;
+    margin-top: 25%;
+}
+
+.essays_main-right_author-socialMedia {
+    height: auto;
+    margin-left: 5%;
+    margin-top: unset;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.essays_main-right_author-width {
+    width: 75%;
+    margin-top: 10%;
+    margin-left: unset;
+}
+
+.essays_main-right_article {
+    margin-top: 3%;
+    padding: 2% 5%;
+    flex-direction: column;
+    border: 1px solid #DAE9E7;
+}
+
+.essays_main-right_article-title {
+    color: #333333;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 120%;
+    font-style: normal;
+}
+
+.essays_main-right_article-description {
+    color: #828282;
+    font-size: 16px;
+    line-height: 130%;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.essays_main-right_article-info {
+    color: #333333;
+    font-size: 12px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.essays_main-right_article-info span {
+    color: #E8BB46;
+}
+
+.essays_other {
+    padding: 5% 2%;
+    display: flex;
+    background: #DAE9E7;
+    flex-direction: column;
+}
+
+.essays_other-header {
+    height: 100px;
+    display: inherit;
+    align-items: flex-start;
+}
+
+.essays_other-header_line {
+    width: 80px;
+    height: inherit;
+    border-right: 1px solid #E8BB46;
+}
+
+.essays_other-header_line-block {
+    height: 40px;
+    width: inherit;
+    background: #E8BB46;
+}
+
+.essays_other-header-title {
+    width: 10vh;
+    color: #333333;
+    font-size: 20px;
+    margin-left: 2%;
+    font-weight: 900;
+    line-height: 90%;
+    margin-top: unset;
+    font-style: normal;
+    margin-bottom: unset;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+}
+
+.essays_other-essays {
+    width: 100%;
+    display: inherit;
+    justify-content: space-around;
+}
+
+.essays_other-essays_essay {
+    width: 25%;
+    padding: 1% 2%;
+    display: inherit;
+    background: white;
+    height: min-content;
+    flex-direction: column;
+}
+
+.essays_other-essays_essay-title {
+    color: #333333;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 130%;
+    font-style: normal;
+}
+
+.essays_other-essays_essay-description {
+    color: #828282;
+    font-size: 16px;
+    line-height: 130%;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.essays_other-essays_essay-info {
+    color: #333333;
+    font-size: 12px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.essays_other-essays_essay-info span {
+    color: #E8BB46;
+}
+
+.essays_other-essays_essay-author {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 120%;
+    font-style: normal;
+    font-family: Raleway, sans-serif;
+}
