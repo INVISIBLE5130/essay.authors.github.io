@@ -6,12 +6,12 @@
 
     <title>Authors</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="authors">
-    <div class="authors_header">
+    <div id="navbar" class="authors_header">
         <div class="authors_header-left">
             <div class="authors_header-left_align">
                 <img class="authors_header-left_logo" src="assets/logo.svg" alt="Logo">
@@ -34,6 +34,68 @@
                     <li class="authors_header-left_menu-title authors_header-right_menu-title">Order Now</li>
                 </ul>
             </div>
+        </div>
+
+        <img class="authors_header-menu" src="assets/menu.svg" alt="Menu">
+        <img class="authors_header-logo" src="assets/logo.svg" alt="Logo">
+        <img class="authors_header-login" src="assets/login.svg" alt="Login">
+    </div>
+
+    <div class="authors_menu hide">
+        <div class="authors_menu-row">
+            <img class="authors_header-menu menuIcon" src="assets/menu.svg" alt="Menu">
+            <input class="authors_menu-search" type="text" maxlength="125">
+        </div>
+
+        <a href="#" class="authors_menu-title">Need a custom essay?</a>
+        <a href="#" class="authors_menu-childTitle">Most recent essays</a>
+        <a href="#" class="authors_menu-childTitle">Most recent shared essays</a>
+        <a href="#" class="authors_menu-childTitle">Most discussing essays</a>
+
+        <a href="#" class="authors_menu-title">Essay</a>
+        <a href="#" class="authors_menu-childTitle">Free essays by subject</a>
+        <a href="#" class="authors_menu-childTitle">Free essays by topic</a>
+        <a href="#" class="authors_menu-childTitle">Latest essays</a>
+
+        <a href="#" class="authors_menu-title">Helpful tips & tricks for writing essay</a>
+        <a href="#" class="authors_menu-childTitle">Popular Types of assays</a>
+
+        <a href="#" class="authors_menu-title">Share Your Essay</a>
+        <a href="#" class="authors_menu-title">Have any questions?</a>
+        <a href="#" class="authors_menu-title">Contacts</a>
+    </div>
+
+    <div class="authors_login hide">
+        <img class="authors_header-login position" src="assets/login.svg" alt="Login">
+
+        <h2 class="authors_login-title">Log in / Sign up</h2>
+
+        <p class="authors_login-comment">
+            You need to Log in or Sign up for a new account in order to access this page
+        </p>
+
+        <input class="authors_login-input" type="text" placeholder="Enter your email to proceed">
+
+        <button class="authors_login-button">Continue</button>
+
+        <p class="authors_login-terms">
+            By clicking “Continue”,
+            you agree to our
+            <span>
+                terms of service
+            </span>
+            and
+            <span>
+                privacy policy
+            </span>
+            . We’ll occasionally send you promo and account related emails.
+        </p>
+        
+        <div class="authors_login-buttonFacebook">
+            <img src="assets/phoneIcon.svg" alt="Facebook">
+            <p>
+                Login with Facebook
+            </p>
         </div>
     </div>
 
@@ -220,7 +282,7 @@
             </div>
         </div>
 
-        <div class="authors_main-add">
+        <div class="authors_main-add addDesktop">
             <div class="authors_main-add_block">
                 <h2 class="authors_main-add_block-title">
                     Need a custom essay?
@@ -236,8 +298,22 @@
             </div>
         </div>
 
+        <div class="authors_main-add_block addMobile">
+            <h2 class="authors_main-add_block-title">
+                Need a custom essay?
+            </h2>
+
+            <p class="authors_main-add_block-comment">
+                We will write it for you.
+            </p>
+
+            <button class="authors_main-add_block-button">
+                Order now
+            </button>
+        </div>
+
         <div class="row">
-            <div class="authors_main-left">
+            <div class="authors_main-left second">
                 <div class="authors_main-left_line"></div>
             </div>
 
@@ -508,5 +584,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

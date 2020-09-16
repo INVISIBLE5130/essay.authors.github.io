@@ -7,10 +7,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.font {
-    font-family: 'Raleway', sans-serif !important;
-}
-
 .authors {
     width: 100%;
     height: 100vh;
@@ -22,7 +18,9 @@ body {
 .authors_header {
     height: 200px;
     width: inherit;
+    position: fixed;
     display: inherit;
+    transition: 0.5s;
 }
 
 .authors_header-left {
@@ -47,6 +45,12 @@ body {
     height: 27px;
     cursor: pointer;
     margin-left: 15%;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1289px) {
+    .authors_header-left_logo {
+        margin-left: 5%;
+    }
 }
 
 .authors_header-left_menu {
@@ -100,6 +104,168 @@ body {
     color: #333333;
 }
 
+.authors_menu {
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: inherit;
+    transition: 0.5s;
+    background: #E8BB46;
+    flex-direction: column;
+}
+
+.hide {
+    display: none !important;
+}
+
+.authors_menu-row {
+    padding: 1% 0 15%;
+    display: inherit;
+}
+
+.menuIcon {
+    margin-top: 1%;
+}
+
+.authors_menu-search {
+    width: 90%;
+    margin: 1% 5%;
+    outline: none;
+    border-radius: 2px;
+    border: 10px solid white;
+    background: url("assets/searchMenu.svg") no-repeat right white;
+    background-size: 15px;
+}
+
+.authors_menu-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 90%;
+    margin: 0 0 5% 14%;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+}
+
+.authors_menu-childTitle {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 100%;
+    margin: 0 0 5% 14%;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+}
+
+.authors_login {
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: inherit;
+    background: #E8BB46;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.position {
+    position: absolute;
+    right: 0;
+    top: 3vh;
+}
+
+.authors_login-title {
+    color: #333333;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 90%;
+    font-style: normal;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+}
+
+.authors_login-comment {
+    width: 85%;
+    color: #333333;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.authors_login-input {
+    margin: 3% 0;
+    width: 250px;
+    height: 50px;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    color: #4F4F4F;
+    font-size: 16px;
+    line-height: 130%;
+    background: white;
+    font-style: normal;
+    border-radius: 2px;
+    font-weight: normal;
+}
+
+.authors_login-button {
+    margin: 3% 0;
+    border: none;
+    width: 270px;
+    height: 50px;
+    color: white;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+    font-style: normal;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #66938D 0%, #EB5757 100%);
+}
+
+.authors_login-terms {
+    width: 85%;
+    color: #333333;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.authors_login-terms span {
+    text-decoration: underline;
+}
+
+.authors_login-buttonFacebook {
+    width: 270px;
+    height: 50px;
+    display: flex;
+    border-radius: 2px;
+    background: #3B5998;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.authors_login-buttonFacebook p {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 120%;
+    font-style: normal;
+    margin-right: 10%;
+}
+
 .authors_main {
     height: auto;
     width: inherit;
@@ -122,7 +288,7 @@ body {
 
 .authors_main-left_line {
     width: 15%;
-    z-index: 10;
+    z-index: 1;
     height: inherit;
     display: inherit;
     justify-content: flex-end;
@@ -173,7 +339,6 @@ body {
 .authors_main-right_author-left {
     height: inherit;
     width: max-content;
-    flex-direction: column;
 }
 
 .authors_main-right_author-left_photo {
@@ -353,7 +518,7 @@ body {
     flex-direction: column;
 }
 
-.authors_footer-left_bottom-lists:nth-child(2) {
+.authors_footer-left_bottom-lists {
     margin-right: 30%;
 }
 
@@ -413,9 +578,10 @@ body {
 
 .authors_footer-right_input {
     border: none;
-    width: 380px;
+    width: auto;
     height: 40px;
     margin: 1vh 0;
+    outline: none;
     color: #4F4F4F;
     padding: 2% 5%;
     font-size: 14px;
@@ -453,4 +619,205 @@ body {
     font-style: normal;
     font-weight: normal;
     text-decoration: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .authors_header-menu {
+        display: none;
+    }
+
+    .authors_header-logo {
+        display: none;
+    }
+
+    .authors_header-login {
+        display: none;
+    }
+
+    .authors_main {
+        padding-top: 200px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .authors_header {
+        height: 40px;
+        padding: 10px 0;
+        background: #66938D;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .authors_header-left {
+        display: none;
+    }
+
+    .authors_header-right {
+        display: none;
+    }
+
+    .authors_header-menu {
+        z-index: 2;
+        width: 30px;
+        height: 15px;
+        cursor: pointer;
+    }
+
+    .authors_header-logo {
+        width: 185px;
+        height: 27px;
+        cursor: pointer;
+    }
+
+    .authors_header-login {
+        z-index: 1;
+        width: 27px;
+        height: 27px;
+        cursor: pointer;
+        margin-right: 3%;
+    }
+
+    .authors_main {
+        padding-top: 60px;
+    }
+
+    .second {
+        display: none;
+    }
+
+    .authors_main-left_title {
+        font-size: 30px;
+        margin: 11% 0 0 5%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .authors_main-left_line {
+        height: 13vh;
+    }
+
+    .authors_main-left_line-block {
+        height: 87px;
+        justify-content: flex-end;
+    }
+
+    .authors_main-left_line-block_arrow {
+        margin-bottom: 40%;
+    }
+
+    .authors_main-right {
+        padding-left: 7%;
+    }
+
+    .authors_main-right_author {
+        flex-direction: column;
+    }
+
+    .authors_main-right_author-left {
+        display: inherit;
+        align-items: center;
+    }
+
+    .authors_main-right_author-left_socialMedia {
+        margin-top: unset;
+    }
+
+    .media {
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+    }
+
+    .authors_main-right_author-right {
+        width: 500px;
+        margin-top: 2%;
+        margin-left: unset;
+    }
+
+    .authors_footer {
+        flex-direction: column;
+    }
+
+    .authors_footer-left {
+        order: 2;
+        width: 100%;
+        height: inherit;
+        padding-bottom: 15%;
+    }
+
+    .authors_footer-left_top {
+        height: auto;
+        padding-top: unset;
+    }
+
+    .authors_footer-right {
+        order: 1;
+        width: auto;
+        height: 475px;
+        padding: 50px 0;
+        align-items: center;
+    }
+
+    .authors_footer-right_title {
+        width: min-content;
+    }
+
+    .authors_footer-right_input {
+        width: 270px;
+        padding: 0 15px;
+    }
+
+    .authors_footer-right_button {
+        width: 300px;
+        height: 50px;
+    }
+
+    .authors_footer-left_bottom {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .authors_footer-left_navigation {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (min-width: 531px) {
+    .addMobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .addDesktop {
+        display: none;
+    }
+
+    .authors_main-add_block {
+        width: 100%;
+        height: 290px;
+        padding: unset;
+        align-items: center;
+    }
+
+    .authors_main-add_block-title {
+        text-align: center;
+    }
+
+    .authors_main-right_author-left_photo {
+        width: 90px;
+        height: auto;
+    }
+
+    .authors_main-right_author-left_photo-lena {
+        width: 100%;
+    }
+
+    .authors_main-right_author-right {
+        width: 260px;
+        margin-top: 2%;
+        margin-left: unset;
+    }
 }
