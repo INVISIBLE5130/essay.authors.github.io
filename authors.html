@@ -7,96 +7,42 @@
     <title>Authors</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="lenasPage.css">
+    <link rel="stylesheet" href="css/build.css">
 </head>
 <body>
 <div class="authors">
-    <div id="navbar" class="authors_header">
-        <div class="authors_header-left">
-            <div class="authors_header-left_align">
-                <img class="authors_header-left_logo" src="../../assets/logo.svg" alt="Logo">
+    <nav class="navbar navbar_active" id="navbar">
+        <div class="navbar__col"><a class="navbar__link" href="/"><img src="/img/logo.svg" alt="EssayBiz"></a>
+            <ul class="menu menu__left">
+                <li class="menu__item menu__item"><a class="menu__link menu__link_white" href="/#essay">Essays</a></li>
+                <li class="menu__item menu__item_white"><a class="menu__link menu__link_white" href="/#tips">Helpful tips &amp; tricks for writing</a></li>
+                <li class="menu__item menu__item_white"><a class="menu__link menu__link_white" href="/#share">Share Your Essay</a></li>
+            </ul>
+        </div>
 
-                <ul class="authors_header-left_menu">
-                    <li class="authors_header-left_menu-title">Essays</li>
-                    <li class="authors_header-left_menu-title">Helpful tips & tricks for writing</li>
-                    <li class="authors_header-left_menu-title">Share Your Essay</li>
-                </ul>
+        <div class="navbar__col">
+            <ul class="menu menu__right">
+                <li class="menu__item menu__item_right"><a class="menu__link" href="/#"><img class="menu__img-search" src="/img/icons/search-dark.svg" alt="search">search</a></li>
+                <li class="menu__item menu__item_right"><a class="menu__link" href="/order">order now</a></li>
+            </ul>
+        </div>
+        <div class="navbar__mobile"><a class="menu-mobile__img-wrap navbar__mobile-wrap" id="menu-open"><img class="navbar__mobile-burger" src="/img/icons/menu.svg" alt="Open menu"></a><a class="menu-mobile__img-wrap navbar__mobile-wrap" href="/"><img class="navbar__mobile-logo" src="/img/logo.svg" alt="EssayBiz"></a><a class="menu-mobile__img-wrap navbar__mobile-wrap" id="login-open"><img class="navbar__mobile-login" src="/img/icons/login.svg" alt="Log in"></a></div>
+    </nav>
+
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="menu-mobile__header"><span class="menu-mobile__img-wrap" id="menu-close"><img class="menu-mobile__close" src="/img/icons/menu.svg" alt="Close menu"></span>
+            <div class="menu-mobile__search">
+                <form class="search__form" action="#"><input class="search__input" type="text" name="search"><input class="search__button" type="image" src="/img/icons/search.svg"></form>
             </div>
         </div>
-
-        <div class="authors_header-right">
-            <div class="authors_header-right_align">
-                <img class="authors_header-right_search" src="../../assets/search.svg" alt="Search">
-
-                <ul class="authors_header-left_menu authors_header-right_menu">
-                    <li class="authors_header-left_menu-title authors_header-right_menu-title">Search</li>
-                    <li class="authors_header-left_menu-title authors_header-right_menu-title">Log In</li>
-                    <li class="authors_header-left_menu-title authors_header-right_menu-title">Order Now</li>
-                </ul>
-            </div>
-        </div>
-
-        <img class="authors_header-menu" src="../../assets/menu.svg" alt="Menu">
-        <img class="authors_header-logo" src="../../assets/logo.svg" alt="Logo">
-        <img class="authors_header-login" src="../../assets/login.svg" alt="Login">
+        <div class="menu-mobile__content"><a class="menu-mobile__link menu-mobile__title" href="/#recent">Need a custom essay?</a><a class="menu-mobile__link" href="/#recent">Most recent essays</a><a class="menu-mobile__link" href="/#recent">Most recent shared essays</a><a class="menu-mobile__link" href="/#recent">Most discussing essays</a><a class="menu-mobile__link menu-mobile__title" href="/#essay">Essay</a><a class="menu-mobile__link" href="/#essay">Free essays by subject</a><a class="menu-mobile__link" href="/#essay">Free essays by topic</a><a class="menu-mobile__link" href="/#essay">Latest essays</a><a class="menu-mobile__link menu-mobile__title" href="/#tips">Helpful tips &amp; tricks for writing essay</a><a class="menu-mobile__link" href="/#tips">Popular Types of assays</a><a class="menu-mobile__link menu-mobile__title" href="/#share">Share Your Essay</a><a class="menu-mobile__link menu-mobile__title" href="/#questions">Have any questions?</a><a class="menu-mobile__link menu-mobile__title" href="/#contact">Contacts</a></div>
     </div>
 
-    <div class="authors_menu hide">
-        <div class="authors_menu-row">
-            <img class="authors_header-menu menuIcon" src="../../assets/menu.svg" alt="Menu">
-            <input class="authors_menu-search" type="text" maxlength="125">
-        </div>
-
-        <a href="#" class="authors_menu-title">Need a custom essay?</a>
-        <a href="#" class="authors_menu-childTitle">Most recent essays</a>
-        <a href="#" class="authors_menu-childTitle">Most recent shared essays</a>
-        <a href="#" class="authors_menu-childTitle">Most discussing essays</a>
-
-        <a href="#" class="authors_menu-title">Essay</a>
-        <a href="#" class="authors_menu-childTitle">Free essays by subject</a>
-        <a href="#" class="authors_menu-childTitle">Free essays by topic</a>
-        <a href="#" class="authors_menu-childTitle">Latest essays</a>
-
-        <a href="#" class="authors_menu-title">Helpful tips & tricks for writing essay</a>
-        <a href="#" class="authors_menu-childTitle">Popular Types of assays</a>
-
-        <a href="#" class="authors_menu-title">Share Your Essay</a>
-        <a href="#" class="authors_menu-title">Have any questions?</a>
-        <a href="#" class="authors_menu-title">Contacts</a>
-    </div>
-
-    <div class="authors_login hide">
-        <img class="authors_header-login position" src="../../assets/login.svg" alt="Login">
-
-        <h2 class="authors_login-title">Log in / Sign up</h2>
-
-        <p class="authors_login-comment">
-            You need to Log in or Sign up for a new account in order to access this page
-        </p>
-
-        <input class="authors_login-input" type="text" placeholder="Enter your email to proceed">
-
-        <button class="authors_login-button">Continue</button>
-
-        <p class="authors_login-terms">
-            By clicking “Continue”,
-            you agree to our
-            <span>
-                terms of service
-            </span>
-            and
-            <span>
-                privacy policy
-            </span>
-            . We’ll occasionally send you promo and account related emails.
-        </p>
-
-        <div class="authors_login-buttonFacebook">
-            <img src="../../assets/phoneIcon.svg" alt="Facebook">
-            <p>
-                Login with Facebook
-            </p>
+    <div class="login" id="login"><span class="login__close" id="login-close"><img class="login__close-img" src="/img/icons/menu.svg" alt="Close modal"></span>
+        <div class="login__content">
+            <h2 class="login__title">Log in / Sign up</h2>
+            <p class="login__text">You need to Log in or Sign up for a new account in order to access this page</p>
+            <form class="login-form" action="#"><input class="login-form__input" type="text" placeholder="Enter your email to proceed"><button class="main-btn" type="submit">Continue</button></form><small class="login__small">By clicking "Continue", you agree to our terms of service and privacy policy. We’ll occasionally send you promo and account related emails.</small><a class="main-btn main-btn_fb" href="#">Login with Facebook</a>
         </div>
     </div>
 
@@ -105,14 +51,14 @@
             <div class="authors_main-left essays_main-left">
                 <div class="authors_main-left_line desktop">
                     <div class="authors_main-left_line-block">
-                        <img class="authors_main-left_line-block_arrow" src="../../assets/arrow.svg" alt="Arrow">
+                        <img class="authors_main-left_line-block_arrow" src="img/arrow.svg" alt="Arrow">
                     </div>
                 </div>
 
                 <div class="essays_main-mobile">
                     <div class="authors_main-left_line">
                         <div class="authors_main-left_line-block">
-                            <img class="authors_main-left_line-block_arrow" src="../../assets/arrow.svg" alt="Arrow">
+                            <img class="authors_main-left_line-block_arrow" src="img/arrow.svg" alt="Arrow">
                         </div>
                     </div>
 
@@ -128,18 +74,18 @@
 
                     <div class="authors_main-right_author-left essays_main-right_author">
                         <div class="authors_main-right_author-left_photo pointer">
-                            <img class="authors_main-right_author-left_photo-lena pointer" src="../../assets/lena.png" alt="Lena">
+                            <img class="authors_main-right_author-left_photo-lena pointer" src="img/lena.png" alt="Lena">
                         </div>
 
                         <div class="authors_main-right_author-left_socialMedia essays_main-right_author-socialMedia">
                             <img class="authors_main-right_author-left_socialMedia-facebook media"
-                                 src="../../assets/facebook.svg" alt="Facebook">
+                                 src="img/facebook.svg" alt="Facebook">
                             <img class="authors_main-right_author-left_socialMedia-twitter media"
-                                 src="../../assets/twitter.svg" alt="Twitter">
+                                 src="img/twitter.svg" alt="Twitter">
                             <img class="authors_main-right_author-left_socialMedia-telegram media"
-                                 src="../../assets/telegram.svg" alt="Telegram">
+                                 src="img/telegram.svg" alt="Telegram">
                             <img class="authors_main-right_author-left_socialMedia-instagram media"
-                                 src="../../assets/instagram.svg" alt="Instagram">
+                                 src="img/instagram.svg" alt="Instagram">
                         </div>
                     </div>
 
@@ -499,103 +445,58 @@
         </div>
     </div>
 
-    <div class="authors_footer">
-        <div class="authors_footer-left">
-            <div class="authors_footer-left_top">
-                <h2 class="authors_footer-left_title">
-                    OUR SERVICE WILL BE
-                    HELPFUL FOR:
-                </h2>
-
-                <p class="authors_footer-left_description">
-                    Essay.biz helps thousands of students learn about the writing process and improve their writing skills.
-                    We do this by showcasing sample quality papers written by students like you.
-                    You can help by sharing a sample essay. We greatly appreciate any submission,
-                    although we can't guarantee that every submission will be published.
-                </p>
+    <footer class="footer">
+        <div class="main__col footer__col" id="contact">
+            <div>
+                <h2 class="footer__title white">OUR SERVICE WILL BE<br>HELPFUL FOR:</h2>
+                <p class="footer__text white">EssayBiz aims at enlightening thousands of students out there about the in-depth process of writing academic essays like a pro. Through our essay writing services, the students are able to hone their individual academic writing skills at the same time. Get access to our high-quality sample papers written by students –just like you. You can also contribute by sharing your sample essay on our portal. EssayBiz welcomes all kinds of academic submissions. While we cannot guarantee that all submissions will be published on our portal, we still respect the efforts put in and value your time!</p>
             </div>
+            <div class="footer-contact__wrap">
+                <div class="footer-contact__col">
+                    <h3 class="footer-contact__title">essay.biz</h3>
+                    <ul class="footer-list">
+                        <li class="footer-list__item"><a class="footer-list__link" href="/about">About</a></li>
+                        <li class="footer-list__item"><a class="footer-list__link" href="/subjects">Subjects</a></li>
+                        <li class="footer-list__item"><a class="footer-list__link" href="/types">Types</a></li>
 
-            <div class="authors_footer-left_bottom">
-                <div class="authors_footer-left_bottom-lists">
-                    <p class="authors_footer-left_bottom-lists_title">
-                        ESSAY.BIZ
-                    </p>
-
-                    <ul class="authors_footer-left_bottom-lists_list">
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <a href="#">
-                                About
-                            </a>
-                        </li>
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <a href="#">
-                                Contact us
-                            </a>
-                        </li>
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <a href="#">
-                                FAQ
-                            </a>
-                        </li>
+                        <li class="footer-list__item"><a class="footer-list__link" href="/about"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/Best-Essay-Writing-Companies">Best Essay Writing Companies</a></li><li class="footer-list__item"><a class="footer-list__link" href="/best-essay-writing-service">Best essay writing service</a></li><li class="footer-list__item"><a class="footer-list__link" href="/"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/Last-minute-essay-writing-service">Last minute essay writing service</a></li><li class="footer-list__item"><a class="footer-list__link" href="/order"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/privacy"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/search"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/subjects"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/terms"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/The_Best_legitimate_essay_writing_service">The Best legitimate essay writing service</a></li><li class="footer-list__item"><a class="footer-list__link" href="/types"></a></li><li class="footer-list__item"><a class="footer-list__link" href="/Write_my_essay_for_me">Write my essay for me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact__col">
+                    <h3 class="footer-contact__title">Contact us</h3>
+                    <ul class="footer-list">
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="#"><img class="footer-list__img" src="/img/icons/phone.svg" alt="">+19732733377</a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="#">180 Talmadge Road<br>IGO Bldg<br>Edison, NJ 08817<br>United States<br></a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="mailto:info@essay.biz"><img class="footer-list__img" src="/img/icons/mail.svg" alt="">info@essay.biz</a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="https://www.facebook.com/EssaysForHelp"><img class="footer-list__img" src="/img/icons/fb.svg" alt="">FaceBook</a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="https://www.instagram.com/essaystudentshelp/"><img class="footer-list__img" src="/img/icons/instagram-logo.png" alt="">Instagram</a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="https://www.pinterest.com/rhubko0766/"><img class="footer-list__img" src="/img/icons/pinterest-logo.png" alt="">Pinterest</a></li>
+                        <li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="https://play.google.com/store/apps/details?id=com.biz.easybiz"><img class="footer-list__img" src="/img/icons/google_play_store_icon.png" alt="">Android App</a></li>
+                        <!--<li class="footer-list__item footer-list__item_right"><a class="footer-list__link white" href="#"><img class="footer-list__img" src="/img/icons/twitter.svg" alt="">@essay.biz</a></li> -->
                     </ul>
                 </div>
 
-                <div class="authors_footer-left_bottom-lists">
-                    <p class="authors_footer-left_bottom-lists_title">
-                        CONTACT US
-                    </p>
-
-                    <ul class="authors_footer-left_bottom-lists_list">
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <img src="../../assets/phoneIcon.svg" alt="Phone">
-                            <a href="#">
-                                +8 800 000 00 (24/7)
-                            </a>
-                        </li>
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <img src="../../assets/emailIcon.svg" alt="Email">
-                            <a href="#">
-                                email@essay.biz
-                            </a>
-                        </li>
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <img src="../../assets/facebookIcon.svg" alt="Facebook">
-                            <a href="#">
-                                @essay.biz
-                            </a>
-                        </li>
-                        <li class="authors_footer-left_bottom-lists_list-item">
-                            <img src="../../assets/twitterIcon.svg" alt="Twitter">
-                            <a href="#">
-                                @essay.biz
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-
-            <div class="authors_footer-left_navigation">
-                <a class="authors_footer-left_navigation-item" href="#">Terms & Conditions</a>
-                <a class="authors_footer-left_navigation-item" href="#">Privacy Policy</a>
-                <a class="authors_footer-left_navigation-item" href="#">DMCA</a>
-            </div>
+            <div class="footer__small_wrap"><small><a class="footer__small white" href="/terms">Terms &amp; Conditions</a></small><small><a class="footer__small white" href="/privacy">Privacy Policy</a></small></div>
         </div>
 
-        <div class="authors_footer-right">
-            <h2 class="authors_footer-right_title">
-                Have any questions?
-            </h2>
+        <div class="main__col footer__col" id="questions">
+            <h2 class="main__right_title footer-right__title">Have any<br>questions?</h2>
+            <form class="footer-form" action="/feedback" method="post" id="feedback"><input class="footer-form__input" name="E-Mail" type="text" placeholder="E-mail"><input class="footer-form__input" type="text" name="Name" placeholder="Name"><textarea class="footer-form__textarea" name="Text" type="text" placeholder="Enter your message"></textarea></form><a class="main-btn main__right_btn" href="#" onclick="$('#feedback').submit()">Send message</a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1516.1179254840176!2d-74.39705710916435!3d40.536378197633184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b7fd70650eb1%3A0x8bb8b8dc85e4748f!2zMTgwIFRhbG1hZGdlIFJkLCBFZGlzb24sIE5KIDA4ODE3LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1600087272841!5m2!1sru!2sua" width="100%" height="240" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-            <input class="authors_footer-right_input" type="text" placeholder="E-mail">
-            <input class="authors_footer-right_input" type="text" placeholder="Name">
-            <input class="authors_footer-right_input" type="text" placeholder="Enter your message">
-
-            <button class="authors_footer-right_button">
-                Send message
-            </button>
         </div>
-    </div>
+    </footer>
 </div>
-<script type="text/javascript" src="../../script.js"></script>
+<script type="module" src="/js/login-mobile.js"></script>
+<script type="module" src="/js/menu-mobile.js"></script>
+<script type="module" src="/js/topics-tab.js"></script>
+<script type="module" src="/js/nav-show.js"></script>
+<script type="module" src="/js/main.js"></script><!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- animation-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script><!-- upload form-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formstone/1.4.16/js/core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formstone/1.4.16/js/upload.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
