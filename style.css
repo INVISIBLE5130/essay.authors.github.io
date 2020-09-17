@@ -758,7 +758,7 @@ body {
     .authors_footer-left {
         order: 2;
         width: 100%;
-        height: inherit;
+        height: auto;
         padding-bottom: 15%;
     }
 

@@ -236,7 +236,7 @@
     }
 
     .essays_other-essays {
-        height: 155vh;
+        height: 200vh;
         flex-direction: column;
         justify-content: space-between;
     }
