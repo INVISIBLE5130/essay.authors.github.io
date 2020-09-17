@@ -682,13 +682,17 @@ body {
         padding-top: 60px;
     }
 
+    .authors_main-left {
+        padding-left: unset;
+    }
+
     .second {
         display: none;
     }
 
     .authors_main-left_title {
         font-size: 30px;
-        margin: 11% 0 0 5%;
+        margin: 10% 0 0 5%;
     }
 
     .row {
@@ -696,10 +700,13 @@ body {
     }
 
     .authors_main-left_line {
+        width: unset;
         height: 20vh;
+        justify-content: flex-start;
     }
 
     .authors_main-left_line-block {
+        width: 50px;
         height: 87px;
         justify-content: flex-end;
     }
@@ -709,11 +716,14 @@ body {
     }
 
     .authors_main-right {
+        width: unset;
         padding-left: 7%;
     }
 
     .authors_main-right_author {
+        width: unset;
         flex-direction: column;
+        padding-right: 10%;
     }
 
     .authors_main-right_author-left {
@@ -817,7 +827,7 @@ body {
     }
 
     .authors_main-right_author-right {
-        width: 260px;
+        width: auto;
         margin-top: 2%;
         margin-left: unset;
     }
