@@ -32,6 +32,7 @@
 .essays_main-right_article-title {
     color: #333333;
     font-size: 30px;
+    cursor: pointer;
     font-weight: bold;
     line-height: 120%;
     font-style: normal;

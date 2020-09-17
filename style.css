@@ -320,6 +320,10 @@ body {
     font-family: Raleway, sans-serif;
 }
 
+.margin {
+    margin-left: 5%;
+}
+
 .authors_main-right {
     width: 70%;
     height: inherit;
