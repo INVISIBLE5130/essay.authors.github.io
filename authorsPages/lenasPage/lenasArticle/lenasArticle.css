@@ -1,3 +1,7 @@
+.articles {
+    cursor: pointer;
+}
+
 .article_main-right {
     border: none;
     margin-top: 1%;

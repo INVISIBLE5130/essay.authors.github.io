@@ -355,6 +355,14 @@ body {
     cursor: pointer;
 }
 
+.lena {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: unset !important;
+}
+
 .authors_main-right_author-left_socialMedia {
     width: 100%;
     display: flex;

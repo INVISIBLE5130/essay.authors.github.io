@@ -36,3 +36,9 @@ document.querySelectorAll('.essays_main-right_article-title').forEach(item => {
         window.location.assign('lenasArticle/lenasArticle.html')
     })
 })
+
+document.querySelectorAll('.articles').forEach(item => {
+    item.addEventListener('click', () => {
+        window.location.assign('../lenasPage.html')
+    })
+})
