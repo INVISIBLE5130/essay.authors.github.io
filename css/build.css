@@ -948,7 +948,7 @@ input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-i
 }
 
 @media (min-width: 1200px) {
-    .navbar_active {
+    .navbar {
         padding: 4.5rem 0;
     }
 }
@@ -2671,13 +2671,13 @@ body {
 .row {
     height: auto;
     width: inherit;
-    display: inherit;
+    display: flex;
 }
 
 .authors_main-left {
     width: 30%;
     height: inherit;
-    display: inherit;
+    display: flex;
     padding-left: 2%;
 }
 
@@ -2815,7 +2815,7 @@ body {
     z-index: 1;
     height: 290px;
     width: inherit;
-    display: inherit;
+    display: flex;
     justify-content: flex-end;
     background: url("../img/ad.png") no-repeat;
     background-size: cover;
