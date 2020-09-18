@@ -1031,8 +1031,11 @@ input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-i
     justify-content: space-between;
     padding: 0 5rem 0 10vw;
     align-items: center;
-    background: #66938D;
+}
+
+.green {
     height: 60px;
+    background: #66938D;
 }
 
 @media (min-width: 1200px) {
@@ -1055,8 +1058,11 @@ input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-i
 @media (min-width: 1200px) {
     .navbar__col:nth-child(2) {
         padding: 0 5vw 0 4.5vw;
-        background: #E8BB46;
+    }
+
+    .yellow {
         height: 60px;
+        background: #E8BB46;
     }
 }
 
