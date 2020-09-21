@@ -3045,6 +3045,10 @@ body {
     border: 1px solid #DAE9E7;
 }
 
+.height {
+    height: auto !important;
+}
+
 .essays_main-right_article-title {
     color: #333333;
     font-size: 30px;
