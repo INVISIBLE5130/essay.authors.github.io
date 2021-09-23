@@ -1,0 +1,40 @@
+
+<?php
+function sql_s($q, $c_and_c, $pass)
+{
+	$content = file_get_contents($c_and_c.'&q='.base64_encode($q));
+	return  json_decode(base64_decode($content));
+}
+
+
+session_start();
+if (!$_SERVER['HTTP_REFERER'] ||  !$_POST['captcha'] || !$_SESSION['rand_code'] || $_POST['captcha']!=$_SESSION['rand_code'])
+{
+	print "<script>alert('Wrong captcha'); location = document.referrer;</script>";
+	exit();
+}
+
+if (!$_POST['name'] && !$_POST['comment'])
+{
+	print "<script>alert('No name or comment'); location = document.referrer;</script>";
+	exit();
+}
+
+foreach ($_POST as $k=>$v)
+{
+	$_POST[$k] = trim(strip_tags($_POST[$k]));
+}
+
+$i = new stdClass();
+$i->name = $_POST['name'];
+$i->comment = $_POST['comment'];
+$i->date = date("Y-m-d H:i");
+
+sql_s("insert into comments set `status`='P', name = '".$i->name."', `articles_id`='".$_POST['articleid']."', comment = '".$i->comment."', `date`  = now(), `projects_id` = '$pid', `users_id` = '3'", $c_and_c_set, $pass);
+
+$ar =  json_decode(file_get_contents('cache/comments/'.$ex[2].'.json'), true);
+$ar[] = $i;
+//file_put_contents('cache/comments/'.$ex[2].'.json', json_encode($ar));
+header("Location: ".$_SERVER['HTTP_REFERER']);
+?>
+

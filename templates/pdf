@@ -1,0 +1,64 @@
+<?php
+//ini_set('display_errors', 1);
+header("HTTP/1.0 404 Not Found");
+die();
+
+
+$json = json_decode(file_get_contents('cache/articles/'.str_replace('.pdf', '.json', $ex[2])));
+
+if (!$json)
+{
+		header('HTTP/1.0 404 Not Found', true, 404);
+		exit();
+}
+
+
+function stringInsert($str,$insertstr,$pos)
+{
+    $str = substr($str, 0, $pos) . $insertstr . substr($str, $pos);
+    return $str;
+} 
+
+for ($i=strlen($json->article);$i>=0;$i--)
+{
+	
+  if ($json->article[$i]==',')
+    break;
+}
+
+$json->article = stringInsert($json->article, '<a href="https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'" target="_blank" style="color: rgb(212, 77, 68);"><img src="data:image/gif;base64,'.base64_encode(file_get_contents('images/x.gif')).'" alt="'.(($json->title)?$json->title:$json->name).'"></a>',$i);
+
+
+require_once 'lib/dompdf/autoload.inc.php';
+require_once 'lib/dompdf/lib/html5lib/Parser.php';
+require_once 'lib/dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
+require_once 'lib/dompdf/lib/php-svg-lib/src/autoload.php';
+require_once 'lib//dompdf/src/Autoloader.php';
+Dompdf\Autoloader::register();
+
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
+
+
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml('<h1>'.$json->name.'</h1>'.
+'<img src="data:image/png;base64,'.base64_encode(file_get_contents('images/'.$json->id.'-'.$json->picture_image[0]->name)).'" align=left width=300 style="padding:25px"><br>'.$json->article
+);
+
+
+//"data:image/gif;base64,'.base64_encode(file_get_contents('images/x.gif')).'"
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream($ex[2]);
+
+//$output = $dompdf->output();
+//    file_put_contents('Brochure.pdf', $output);
+
+?>

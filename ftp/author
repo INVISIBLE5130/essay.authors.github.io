@@ -1,0 +1,134 @@
+<?php
+  $authors = json_decode(file_get_contents('cache/authors.json'));
+  $author = null;
+  foreach ($authors as $k=>$v)
+  {
+    if ($v->id==$ex[2] || $v->alias==$ex[2])
+    {
+        $author = $v;
+        break;
+    }
+  }
+
+  $articles = array();
+  $articlesall = json_decode(file_get_contents('cache/articleslist.json'));  
+  foreach ($articlesall as $k=>$v)
+  {
+    if ($v->author==$author->alias || $v->authors_id[0]->id==$author->id)
+        $articles[] = $v;
+  }
+
+
+  $item = new stdClass();
+  $item->name = $author->name;
+  $item->description = $author->title;
+
+  include ('header.php');
+
+?>
+
+    <section class="page__header">
+        <div class="page__header-col"></div>
+        <div class="page__header-col"></div>
+    </section>
+    <div class="left-banner_wrapper">
+        <img class="left-banner_wrapper-close" src="../img/close.svg" alt="Close">
+        <script type="text/javascript">
+            var partner_id = 18808;
+            var sub_id = "1";
+            var bg_calc_button_color_ph_new_design_cust_calc = "eca230";
+            var bg_active_button_color_ph_new_design_cust_calc = "e7a033";
+            var font_button_color_ph_new_design_cust_calc = "ffffff";
+            var academic_level_ph_new_design_cust_calc = "6";
+            (function () {
+                var sc = document.createElement('script');
+                sc.type = 'text/javascript';
+                sc.async = true;
+                sc.src = 'https://www.edu-profit.com/orderformph-new2.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(sc, s);
+            })();
+        </script>
+        <div id="orderformph-new-2"></div>
+    </div>
+    <div class="authors_main">
+        <div class="row">
+            <div class="authors_main-left essays_main-left">
+                <div class="authors_main-left_line desktop">
+                    <div class="authors_main-left_line-block">
+                        <a href="/authors"><img class="authors_main-left_line-block_arrow" src="/img/arrow.svg" alt="Arrow"></a>
+                    </div>
+                </div>
+
+                <div class="essays_main-mobile">
+                    <div class="authors_main-left_line">
+                        <div class="authors_main-left_line-block">
+                            <a href="authors"><img class="authors_main-left_line-block_arrow" src="/img/arrow.svg" alt="Arrow"></a>
+                        </div>
+                    </div>
+
+                    <h1 class="authors_main-left_title">
+                        Essays
+                    </h1>
+                </div>
+
+                <div class="authors_main-right_author essays_main-right">
+                    <h1 class="authors_main-left_title desktop">
+                        Essays
+                    </h1>
+
+                    <div class="authors_main-right_author-left essays_main-right_author">
+                        <div class="authors_main-right_author-left_photo pointer">
+                            <img class="authors_main-right_author-left_photo-lena" style="width:240px" src="data:image/png;base64,<?=($author->picture_image[0]->data)?>" alt="<?=$author->name?>">
+                        </div>
+
+                        <div class="authors_main-right_author-left_socialMedia essays_main-right_author-socialMedia">
+                            <a href="<?=$author->facebook?>" target=_blank><img class="authors_main-right_author-left_socialMedia-facebook media"
+                                 src="/img/facebook.svg" alt="Facebook">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="authors_main-right_author-right essays_main-right_author-width">
+                        <h2 class="authors_main-right_author-right_name pointer"><?=$author->name?></h2>
+                        <p class="authors_main-right_author-right_position"><?=$author->title?></p>
+                        <p class="authors_main-right_author-right_comment"><?=$author->description?></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="authors_main-right">
+            <?php
+                foreach ($articles as $k=>$v)
+                {
+            ?>
+                <div class="authors_main-right_author essays_main-right_article">
+                    <a href="<?=$v->url?>" class="height"><h2 class="essays_main-right_article-title">
+                        <?=$v->name?>
+                    </h2></a><Br><br>
+
+                    <p class="essays_main-right_article-description">
+                        <?=trim(strip_tags(substr($v->article, 0, 350)))?>...
+                    </p>
+
+                    <p class="essays_main-right_article-info">
+                        <?=count(explode(" ",$v->article))?> Words
+                        <span>/</span>
+                        <?=date("M",strtotime($v->atime))?> <?=date("d",strtotime($v->atime))?>, <?=date("Y",strtotime($v->atime))?>
+                        <span>/</span>
+                        <?=ceil(count(explode(" ",$v->article))/500)?> Pages
+                    </p>
+                </div>
+
+            <?php } ?>
+            </div>            
+        </div>
+
+    </div>
+
+
+
+<?php
+  include ('footer.php');
+?>

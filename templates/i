@@ -1,0 +1,4 @@
+<?php
+header('Content-type: ' . 'image/gif');
+print file_get_contents("images/x.gif");
+?>

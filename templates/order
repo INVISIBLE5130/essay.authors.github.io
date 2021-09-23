@@ -1,0 +1,31 @@
+<?php
+include ('header.php');
+
+?>
+    <section class="page__header">
+        <div class="page__header-col"></div>
+        <div class="page__header-col"></div>
+    </section>
+    <section class="recent latest" id="content">
+
+
+<script type="text/javascript">
+var pid_of = 18808;
+var sub_id_of = "1";
+var width_of = "100%";
+var partner_site = "BIZ";
+var new_design_of = 3;
+var neutral_d = 1;
+var bg_ab_color = 'f9b25c';
+</script>
+<script type="text/javascript" src="https://www.paperhelp.org/public/partner_js/getUrlParametrs.js"></script>
+<script type="text/javascript" src="https://www.paperhelp.org/public/partner_js/partnerOF.js"></script>
+
+<!-- <div id="order-stepper-form-content"><h1 id="loading">Loading ...</h1></div><script id="order-form-script" src="https://order-form.site.supplies/build/index.js?app_id=4&rt=TbXa3Oe7&service_name=EssayBIZ"></script>
+                <script>var inter = setInterval(function (){ if (document.getElementById('order-stepper-form-content').innerHTML.length>50) { clearInterval(inter); document.getElementById('loading').style.display='none'; } },100)</script> -->
+
+    </section>
+<?php
+include ('footer.php');
+
+?>

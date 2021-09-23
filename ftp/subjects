@@ -1,0 +1,217 @@
+<?php
+if ($ex[2])
+    $item->name =  ucfirst(str_replace('-', ' ', $ex[2]))." | ".$item->name;
+
+
+$articles = json_decode(file_get_contents('cache/articleslist.json'));
+$ar=array();
+foreach ($articles as $k=>$v)
+    array_unshift($ar, $v);
+$articles = $ar;
+
+
+$categories = json_decode(file_get_contents('cache/categories.json'));
+$tags = json_decode(file_get_contents('cache/tags.json'));
+
+$chars = array();
+
+for ($i=65;$i<=90;$i++)
+{
+
+    $chars2[chr($i)]=array();
+    $charsspec[chr($i)]=array();
+}
+
+if ($ex[1]=='subjects')
+foreach ($tags as $key => $value) 
+{
+    if ($value->id==$ex[3])
+        $item->description = $value->description;
+    $charsspec[substr(trim($value->name), 0,1)][]=$value;
+}
+
+if ($ex[1]=='types')
+foreach ($categories as $key => $value) 
+{
+    if ($value->id==$ex[3])
+        $item->description = $value->description;
+    $charsspec[substr(trim($value->name), 0,1)][]=$value;
+}
+
+
+foreach ($articles as $key => $value) 
+{
+
+
+    if ($value->status!='Public')
+        continue;
+
+    if (!isset($ex[3]) && $ex[1]=='subjects')
+    {
+        if (count($value->tags_id)<=0 || count($value->categories_id)>0)
+            continue;
+    }
+
+    if (!isset($ex[3]) && $ex[1]=='types')
+    {
+        if (count($value->categories_id)<=0)
+            continue;
+    }
+
+
+    if (isset($ex[3]) && $ex[1]=='subjects')
+    {
+        $trust=false;
+        for ($i=0;$i<count($value->tags_id);$i++)
+        {
+            if ($value->tags_id[$i]->id==$ex[3])
+            {
+                $trust=true;
+            }
+        }
+        if (!$trust)
+            continue;
+    }
+
+
+    if (isset($ex[3]) && $ex[1]=='types')
+    {
+        $trust=false;
+        for ($i=0;$i<count($value->categories_id);$i++)
+        {
+            if ($value->categories_id[$i]->id==$ex[3])
+            {
+                $trust=true;
+            }
+        }
+        if (!$trust)
+            continue;
+    }
+
+    $chars2[substr(trim($value->name), 0,1)][]=$value;
+}
+
+
+include ('header.php');
+
+?>
+    <section class="page__header">
+        <div class="page__header-col"></div>
+        <div class="page__header-col"></div>
+    </section>
+   <section class="block-essay" id="essay">
+        <div class="block-essay__col block-essay__col_middle">
+            <h1 class="block-essay__title"><?=str_replace('-', ' ', $ex[2])?></h1>
+            <div class="tab__wrap">
+                <ul class="tab">
+                    <li class="tab__links">#</li>
+                    <li class="tab__links">a</li>
+                    <li class="tab__links">b</li>
+                    <li class="tab__links">c</li>
+                    <li class="tab__links">d</li>
+                    <li class="tab__links">e</li>
+                    <li class="tab__links">f</li>
+                    <li class="tab__links">g</li>
+                    <li class="tab__links">h</li>
+                    <li class="tab__links">i</li>
+                    <li class="tab__links">j</li>
+                    <li class="tab__links">k</li>
+                    <li class="tab__links">l</li>
+                    <li class="tab__links">m</li>
+                    <li class="tab__links">n</li>
+                    <li class="tab__links">o</li>
+                    <li class="tab__links">p</li>
+                    <li class="tab__links">q</li>
+                    <li class="tab__links">r</li>
+                    <li class="tab__links">s</li>
+                    <li class="tab__links">t</li>
+                    <li class="tab__links">u</li>
+                    <li class="tab__links">v</li>
+                    <li class="tab__links">w</li>
+                    <li class="tab__links">x</li>
+                    <li class="tab__links">y</li>
+                    <li class="tab__links">z</li>
+                </ul>
+            </div>
+        </div>
+        <div class="block-essay__col block-essay__col_bottom">
+            <div class="block-essay__subject">
+                <div class="block-essay__subject-block wow clipInLeft"></div>
+                <h3 class="block-essay__subtitle">Free essays<br>by <?=$ex[1]?>:</h3>
+                <div class="tab__content">
+                <?php
+                foreach($chars2 as $k=>$v)
+                    foreach ($v as $item)
+                {
+                ?>
+                    <a class="tab__topics-links" href="<?=$item->url?>">
+                        <div class="hot__topics-item tab__content-item">
+                            <div class="hot__topics-text"><?=$item->name?></div>
+                        </div>
+                    </a>
+                <?php } ?>
+                </div>
+                       <?php
+                        foreach($chars2 as $k=>$v)
+                        {
+                        print '<div class="tab__content">';
+                        foreach ($v as $item)
+                        {
+                        ?>
+
+                            <a class="tab__topics-links" href="<?=$item->url?>">
+                                <div class="hot__topics-item tab__content-item">
+                                    <div class="hot__topics-text"><?=$item->name?></div>
+                            </div>
+                            </a>
+        
+                        <?php } print '</div>'; } ?>
+            </div>
+
+
+            <div class="block-essay__topic">
+
+                <div class="block-essay__topic-block wow clipInLeft"></div>
+                <h3 class="block-essay__subtitle"><?=$ex[1]?>:</h3>
+                <div>
+                    <div class="tab__content_free">
+                    <?php
+                    $i=0;
+                    foreach($charsspec as $k=>$v)
+                    foreach ($v as $item)
+                    {
+                        $i++;
+                        if ($i==50)
+                            break;
+                    ?>
+                    <a class="tab__topics-links" href="/<?=$ex[1]?>/<?=sluggify($item->name)?>/<?=$item->id?>">
+                        <div class="hot__topics-item tab__content-item">
+                            <div class="hot__topics-text"><?=$item->name?></div>
+                        </div>
+                    </a>
+                    <?php } ?>                        
+                    </div>
+                       <?php
+                        foreach($charsspec as $k=>$v)
+                        {
+                        print '<div class="tab__content_free">';
+                        foreach ($v as $item)
+                        {
+                        ?>
+
+                            <a class="tab__topics-links" href="/<?=$ex[1]?>/<?=sluggify($item->name)?>/<?=$item->id?>">
+                                <div class="hot__topics-item tab__content-item">
+                                    <div class="hot__topics-text"><?=$item->name?></div>
+                            </div>
+                            </a>
+        
+                        <?php } print '</div>'; } ?>
+
+                </div>
+            </div>        
+        </div>
+    </section>
+<?php
+include ('footer.php');
+
+?>

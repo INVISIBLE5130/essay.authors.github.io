@@ -1,0 +1,70 @@
+<?php
+  $authors = json_decode(file_get_contents('cache/authors.json'));
+  $title = 'Authors';
+  include ('header.php');
+?>
+
+    <section class="page__header">
+        <div class="page__header-col"></div>
+        <div class="page__header-col"></div>
+    </section>
+
+
+    <div class="authors_main">
+        <div class="row">
+            <div class="authors_main-left">
+                <div class="authors_main-left_line">
+                    <div class="authors_main-left_line-block">
+                        <a href="/"><img class="authors_main-left_line-block_arrow" src="/img/arrow.svg" alt="Arrow"></a>
+                    </div>
+                </div>
+
+                <h1 class="authors_main-left_title margin">
+                    Authors
+                </h1>
+            </div>
+
+            <div class="authors_main-right">
+
+                <?php
+                    foreach ($authors as $k=>$v)
+                    {
+                ?>
+
+                <div class="authors_main-right_author">
+                    <div class="authors_main-right_author-left">
+                        <div class="authors_main-right_author-left_photo lena">
+                            <a href="/author/<?=$v->alias?>"><img class="authors_main-right_author-left_photo-lena" style="width:240px" src="data:image/png;base64,<?=($v->picture_image[0]->data)?>" alt="<?=$v->name?>"></a>
+                        </div>
+
+                        <div class="authors_main-right_author-left_socialMedia">
+                            <a href="<?=$v->facebook?>" target=_blank><img class="authors_main-right_author-left_socialMedia-facebook media"
+                                 src="/img/facebook.svg" alt="Facebook"></a>
+                        </div>
+                    </div>
+
+                    <div class="authors_main-right_author-right">
+                        <a href="/author/<?=$v->alias?>"><h2 class="authors_main-right_author-right_name lena"><?=$v->name?></h2></a>
+                        <p class="authors_main-right_author-right_position"><?=$v->title?></p>
+                        <a href="/author/<?=$v->alias?>"><span class="authors_main-right_author-right_articles lena">View articles created by <?=$v->name?></span></a>
+                        <p class="authors_main-right_author-right_comment">
+                            <?=$v->description?>
+                        </p>
+                    </div>
+                </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/js/script.js"></script>
+<?php
+  include ('footer.php');
+?>

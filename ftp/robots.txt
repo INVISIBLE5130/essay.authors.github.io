@@ -1,0 +1,11 @@
+<?php
+	header("Content-type: text/plain");
+?>
+User-agent: *
+Disallow: /order
+Disallow: /terms
+Disallow: /privacy
+Disallow: /search
+Disallow: /comment
+
+Sitemap: https://<?=$_SERVER['HTTP_HOST']?>/sitemap.xml
