@@ -25,6 +25,58 @@ window.addEventListener('scroll', showNavOnScroll);
 //Script for banner
 
 window.addEventListener('load', () => {
+  const orderButtons = document.querySelectorAll('.main-btn'),
+      orderBanner = document.querySelector('.banner-order_wrapper'),
+      orderBannerClose = document.querySelector('.banner-order_wrapper-window-close'),
+      orderBannerTitleSearch = document.querySelector('.banner-order_wrapper-window-title_search'),
+      orderBannerLoading = document.querySelector('.banner-order_wrapper-window-loading'),
+      orderBannerWritersNumber = document.querySelector('.banner-order_wrapper-window-search_results-title').querySelector('span'),
+      orderBannerResult = document.querySelector('.banner-order_wrapper-window-search_results'),
+      orderBannerLoadingItems = document.querySelectorAll('.banner-order_wrapper-window-loading-item')
+  orderBannerClose.addEventListener('click', () => {
+    orderBanner.classList.remove('banner-order_wrapper-show')
+    document.querySelectorAll('.banner-order_wrapper-window-loading-item').forEach(item => {
+      item.classList.remove('banner-order_wrapper-window-loading-item_loaded')
+    })
+  })
+  orderButtons.forEach(button => {
+    button.addEventListener('click', e => {
+      e.preventDefault();
+      if (button.innerHTML.toUpperCase() === 'ORDER NOW') {
+        button.removeAttribute('href')
+        orderBannerLoadingItems.forEach(e => {
+          e.classList.remove('banner-order_wrapper-window-loading-item_loaded')
+        })
+        orderBannerTitleSearch.style.display = 'flex'
+        orderBannerLoading.style.display = 'flex'
+        orderBannerResult.style.display = 'none'
+        orderBanner.classList.add('banner-order_wrapper-show')
+        let active_li_index = 0;
+
+        const interval = setInterval(function () {
+          active_li_index++;
+          document.querySelectorAll('.banner-order_wrapper-window-loading-item')[active_li_index]?.classList.add('banner-order_wrapper-window-loading-item_loaded');
+        }, 24);
+        setTimeout(() => {
+          clearInterval(interval)
+          orderBannerTitleSearch.style.display = 'none'
+          orderBannerLoading.style.display = 'none'
+          orderBannerResult.style.display = 'flex'
+          function randomIntFromInterval(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+          }
+          orderBannerWritersNumber.innerHTML = randomIntFromInterval(3, 13).toString()
+        }, 3000)
+      }
+    })
+  })
+  const loadingItemClass = 'banner-order_wrapper-window-loading-item',
+      loadingItemsLength = window.innerWidth < 768 ? 100 : 125
+  for (let i = 0; i <= loadingItemsLength; i++) {
+    const loadingItem = document.createElement('div')
+    loadingItem.setAttribute('class', loadingItemClass)
+    orderBannerLoading.appendChild(loadingItem)
+  }
   if (window.location.pathname !== '/') {
     const oldDateTopBanner = new Date(localStorage.getItem('banner')),
         newDate = new Date(),

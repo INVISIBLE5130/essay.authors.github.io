@@ -3468,6 +3468,292 @@ body {
     }
 }
 
+.banner-order_wrapper {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1111;
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+}
+
+.banner-order_wrapper-show {
+    display: flex;
+}
+
+.banner-order_wrapper-window {
+    width: 625px;
+    height: 539px;
+    display: flex;
+    position: relative;
+    background-color: white;
+    border: 20px solid white;
+}
+
+.banner-order_wrapper-window_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 30px;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #66938D;
+}
+
+.banner-order_wrapper-window-close {
+    top: -20px;
+    width: 20px;
+    right: -20px;
+    height: 20px;
+    padding: 20px;
+    cursor: pointer;
+    position: absolute;
+    box-sizing: content-box;
+    background-color: white;
+}
+
+.banner-order_wrapper-window-title_search {
+    margin: 0;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 150%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+.banner-order_wrapper-window-loading {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.banner-order_wrapper-window-loading-item {
+    width: 2px;
+    height: 25px;
+    margin-left: 2px;
+    transition: 0.25s;
+    background-color: #DAE9E7;
+}
+
+.banner-order_wrapper-window-loading-item_loaded {
+    background-color: #66938D;
+}
+
+.banner-order_wrapper-window-loading-item:first-child {
+    margin-left: unset;
+    background-color: #66938D;
+}
+
+.banner-order_wrapper-window-search_results {
+    display: none;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.banner-order_wrapper-window-search_results-img {
+    width: 36px;
+    margin-right: 15px;
+}
+
+.banner-order_wrapper-window-search_results-title {
+    margin: 0;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 150%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+.banner-order_wrapper-window-search_results-title span {
+    color: #E8BB46;
+    text-decoration-line: underline;
+}
+
+.banner-order_wrapper-window-title {
+    color: #333333;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 30px 0 0;
+    line-height: 100%;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+}
+
+.banner-order_wrapper-window-steps {
+    width: 100%;
+    display: flex;
+    margin: 30px 0 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-order_wrapper-window-steps-arrow {
+    height: 30px;
+}
+
+.banner-order_wrapper-window-steps-item {
+    width: 117px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-order_wrapper-window-steps-item-number {
+    margin: 0;
+    color: #E8BB46;
+    font-size: 48px;
+    padding: 10px 0 0;
+    line-height: 100%;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid #DAE9E7;
+    border-left: 2px solid #DAE9E7;
+    border-right: 2px solid #DAE9E7;
+    border-radius: 270px 270px 0 0;
+    font-family: Lato, sans-serif;
+}
+
+.banner-order_wrapper-window-steps-item-title {
+    color: #333333;
+    font-size: 18px;
+    margin: 15px 0 0;
+    font-weight: bold;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+.banner-order_wrapper-window-revisions {
+    color: #333333;
+    font-size: 16px;
+    margin: 30px 0 0;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+.banner-order_wrapper-window-revisions span {
+    color: #66938D;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.banner-order_wrapper-window-order_button {
+    height: auto;
+    padding: 16px;
+    margin: 30px 0 0;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #66938D 0%, #EB5757 100%);
+
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .banner-order_wrapper-window {
+        width: 375px;
+        height: 602px;
+    }
+
+    .banner-order_wrapper-window-title_search {
+        margin: 5px 0 0;
+    }
+
+    .banner-order_wrapper-window-loading {
+        margin-top: 5px;
+    }
+
+    .banner-order_wrapper-window-loading-item {
+        width: 1px;
+        margin-left: 2px;
+    }
+
+    .banner-order_wrapper-window-title {
+        font-size: 36px;
+        margin: 20px 0 0;
+    }
+
+    .banner-order_wrapper-window-steps {
+        padding: 0 20px;
+        margin: 20px 0 0;
+        flex-direction: column;
+    }
+
+    .banner-order_wrapper-window-steps-item {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .banner-order_wrapper-window-steps-item-number {
+        width: 40%;
+        padding: unset;
+    }
+
+    .banner-order_wrapper-window-steps-item-title {
+        width: 60%;
+    }
+
+    .banner-order_wrapper-window-steps-arrow {
+        margin: 0 16vw 0 auto;
+        transform: rotate(90deg);
+    }
+
+    .banner-order_wrapper-window-revisions {
+        font-size: 14px;
+        margin: 20px 0 0;
+    }
+
+    .banner-order_wrapper-window-order_button {
+        font-size: 16px;
+        margin: 20px 0 0;
+    }
+}
+
+@media screen and (max-height: 602px) {
+    .banner-order_wrapper-window {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .banner-order_wrapper-window {
+        width: 100%;
+    }
+
+    .banner-order_wrapper-window_wrapper {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .banner-order_wrapper-window-loading {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .banner-order_wrapper-window {
+        width: 100%;
+    }
+}
+
 .left-banner_wrapper {
     bottom: 0;
     opacity: 0;

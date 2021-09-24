@@ -103,6 +103,62 @@ Upscope('updateConnection', {
                 <img class="banner_wrapper-close banner_wrapper-click" src="../img/close.svg" alt="Close">
             </div>
         </div>
+        <div class="banner-order_wrapper">
+            <div class="banner-order_wrapper-window">
+                <div class="banner-order_wrapper-window_wrapper">
+                    <img class="banner-order_wrapper-window-close" src="../img/closeDark.svg" alt="Close">
+                    <p class="banner-order_wrapper-window-title_search">
+                        Searching for writers...
+                    </p>
+                    <div class="banner-order_wrapper-window-loading">
+
+                    </div>
+                    <div class="banner-order_wrapper-window-search_results">
+                        <img class="banner-order_wrapper-window-search_results-img" src="../img/book.svg" alt="Book"/>
+                        <p class="banner-order_wrapper-window-search_results-title">
+                            <span>7</span> FREE writers found
+                        </p>
+                    </div>
+                    <p class="banner-order_wrapper-window-title">
+                        Three Easy Steps
+                    </p>
+                    <div class="banner-order_wrapper-window-steps">
+                        <div class="banner-order_wrapper-window-steps-item">
+                            <p class="banner-order_wrapper-window-steps-item-number">
+                                1
+                            </p>
+                            <p class="banner-order_wrapper-window-steps-item-title">
+                                Place an order
+                            </p>
+                        </div>
+                        <img class="banner-order_wrapper-window-steps-arrow" src="../img/arrowRight.svg" alt="Arrow"/>
+                        <div class="banner-order_wrapper-window-steps-item">
+                            <p class="banner-order_wrapper-window-steps-item-number">
+                                2
+                            </p>
+                            <p class="banner-order_wrapper-window-steps-item-title">
+                                Track the Progress
+                            </p>
+                        </div>
+                        <img class="banner-order_wrapper-window-steps-arrow" src="../img/arrowRight.svg" alt="Arrow"/>
+                        <div class="banner-order_wrapper-window-steps-item">
+                            <p class="banner-order_wrapper-window-steps-item-number">
+                                3
+                            </p>
+                            <p class="banner-order_wrapper-window-steps-item-title">
+                                Receive a Paper
+                            </p>
+                        </div>
+                    </div>
+                    <p class="banner-order_wrapper-window-revisions">
+                        All revisions are <span>for FREE</span>
+                    </p>
+                    <a href="https://essay.biz/order" aria-label="Order page" class="banner-order_wrapper-window-order_button">
+                        Proceed with your Order
+                    </a>
+                </div>
+            </div>
+        </div>
     <nav class="navbar" id="navbar">
         <div class="navbar__col"><a class="navbar__link" href="/"><img src="/img/logo.svg" alt="EssayBiz"></a>
                     <?php if (!$ex[1]) { ?>
